@@ -211,19 +211,19 @@ const Index = () => {
               До начала торжества осталось:
             </h3>
             <div className="grid grid-cols-4 gap-4 text-center">
-              <div className="bg-pink-200 text-black p-4 rounded-lg border border-pink-300">
+              <div className="bg-background text-foreground p-4 rounded-lg border border-black">
                 <div className="text-2xl font-bold">{timeLeft.days}</div>
                 <div className="text-sm">дней</div>
               </div>
-              <div className="bg-pink-200 text-black p-4 rounded-lg border border-pink-300">
+              <div className="bg-background text-foreground p-4 rounded-lg border border-black">
                 <div className="text-2xl font-bold">{timeLeft.hours}</div>
                 <div className="text-sm">часов</div>
               </div>
-              <div className="bg-pink-200 text-black p-4 rounded-lg border border-pink-300">
+              <div className="bg-background text-foreground p-4 rounded-lg border border-black">
                 <div className="text-2xl font-bold">{timeLeft.minutes}</div>
                 <div className="text-sm">минут</div>
               </div>
-              <div className="bg-pink-200 text-black p-4 rounded-lg border border-pink-300">
+              <div className="bg-background text-foreground p-4 rounded-lg border border-black">
                 <div className="text-2xl font-bold">{timeLeft.seconds}</div>
                 <div className="text-sm">секунд</div>
               </div>
