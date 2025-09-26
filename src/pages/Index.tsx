@@ -56,12 +56,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
       {/* Декоративные черные бантики */}
-      <div className="absolute top-10 left-10 text-4xl animate-pulse opacity-60" style={{filter: 'hue-rotate(280deg) saturate(0) brightness(0)'}}>🎀</div>
-      <div className="absolute top-20 right-20 text-3xl animate-pulse delay-300 opacity-60" style={{filter: 'hue-rotate(280deg) saturate(0) brightness(0)'}}>🎀</div>
-      <div className="absolute top-40 left-1/4 text-2xl animate-pulse delay-500 opacity-60" style={{filter: 'hue-rotate(280deg) saturate(0) brightness(0)'}}>🎀</div>
-      <div className="absolute top-60 right-1/3 text-3xl animate-pulse delay-700 opacity-60" style={{filter: 'hue-rotate(280deg) saturate(0) brightness(0)'}}>🎀</div>
-      <div className="absolute bottom-20 left-20 text-4xl animate-pulse delay-1000 opacity-60" style={{filter: 'hue-rotate(280deg) saturate(0) brightness(0)'}}>🎀</div>
-      <div className="absolute bottom-40 right-16 text-2xl animate-pulse delay-1200 opacity-60" style={{filter: 'hue-rotate(280deg) saturate(0) brightness(0)'}}>🎀</div>
+      <div className="absolute top-10 left-10 text-4xl animate-pulse opacity-80" style={{filter: 'brightness(0.2)'}}>🎀</div>
+      <div className="absolute top-20 right-20 text-3xl animate-pulse delay-300 opacity-80" style={{filter: 'brightness(0.2)'}}>🎀</div>
+      <div className="absolute top-40 left-1/4 text-2xl animate-pulse delay-500 opacity-80" style={{filter: 'brightness(0.2)'}}>🎀</div>
+      <div className="absolute top-60 right-1/3 text-3xl animate-pulse delay-700 opacity-80" style={{filter: 'brightness(0.2)'}}>🎀</div>
+      <div className="absolute bottom-20 left-20 text-4xl animate-pulse delay-1000 opacity-80" style={{filter: 'brightness(0.2)'}}>🎀</div>
+      <div className="absolute bottom-40 right-16 text-2xl animate-pulse delay-1200 opacity-80" style={{filter: 'brightness(0.2)'}}>🎀</div>
 
       <div className="container mx-auto px-4 py-8 relative z-10">
         {/* 1. Заголовок */}
@@ -135,7 +135,7 @@ const Index = () => {
             <h3 className="text-xl font-cormorant font-semibold mb-6">Дата торжества</h3>
             <div className="bg-white rounded-lg shadow-inner p-4 max-w-xs mx-auto border">
               {/* Заголовок календаря */}
-              <div className="bg-red-600 text-white rounded-t-lg -mx-4 -mt-4 mb-2 py-2">
+              <div className="bg-background text-foreground rounded-t-lg -mx-4 -mt-4 mb-2 py-2 border-b">
                 <p className="text-sm font-semibold">Октябрь 2025</p>
               </div>
               
