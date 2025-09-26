@@ -21,6 +21,7 @@ const Index = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const targetDate = new Date('2025-10-10T17:00:00').getTime();
 
@@ -42,10 +43,35 @@ const Index = () => {
     return () => clearInterval(timer);
   }, [targetDate]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (guestForm.name && guestForm.response) {
-      setIsSubmitted(true);
+      setIsSubmitting(true);
+      
+      try {
+        const response = await fetch('https://functions.poehali.dev/e3a67e2e-eaf5-49e1-8fcb-7dfda6f91adc', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: guestForm.name,
+            attendance: guestForm.response
+          })
+        });
+
+        if (response.ok) {
+          setIsSubmitted(true);
+        } else {
+          console.error('Ошибка отправки формы:', response.statusText);
+          alert('Произошла ошибка при отправке. Попробуйте еще раз.');
+        }
+      } catch (error) {
+        console.error('Ошибка сети:', error);
+        alert('Произошла ошибка при отправке. Проверьте интернет-соединение.');
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -313,8 +339,8 @@ const Index = () => {
                   </RadioGroup>
                 </div>
                 
-                <Button type="submit" className="w-full">
-                  Отправить ответ
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? 'Отправляется...' : 'Отправить ответ'}
                 </Button>
               </form>
             ) : (

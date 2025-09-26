@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "name": "Test CORS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": "",
+      "bodyMatcher": "exact"
+    },
+    {
+      "name": "Test valid guest form submission",
+      "method": "POST", 
+      "path": "/",
+      "body": {
+        "name": "Иван Петров",
+        "attendance": "yes"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "guest_name": "string",
+        "attendance": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
