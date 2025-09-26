@@ -64,7 +64,7 @@ const Index = () => {
       <div className="absolute bottom-40 right-16 text-2xl animate-pulse delay-1200">🎀</div>
 
       <div className="container mx-auto px-4 py-8 relative z-10">
-        {/* Заголовок */}
+        {/* 1. Заголовок */}
         <div className="text-center mb-12">
           <div className="flex justify-center items-center mb-4">
             <span className="text-6xl">👑</span>
@@ -82,8 +82,64 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Дата в сердечке */}
-        <Card className="max-w-md mx-auto mb-8 border-2 border-black relative heart-decoration">
+        {/* 2. Фото принцессы Златы */}
+        <div className="text-center mb-12 animate-fade-in">
+          <div className="relative inline-block animate-float">
+            <img 
+              src="https://cdn.poehali.dev/files/7f9f40aa-06c6-49e3-8503-c89fc0c38d8c.jpg"
+              alt="Принцесса Злата"
+              className="max-w-sm mx-auto rounded-xl shadow-2xl border-4 border-accent hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute -top-4 -right-4 text-4xl animate-bounce">👑</div>
+            <div className="absolute -bottom-2 -left-2 text-3xl animate-pulse">✨</div>
+          </div>
+          <p className="mt-6 text-lg font-cormorant italic text-muted-foreground">
+            Её Высочество Принцесса Злата
+          </p>
+        </div>
+
+        {/* 3. Королевское воззвание */}
+        <Card className="max-w-4xl mx-auto mb-12 border-2 border-black animate-fade-in shadow-xl hover:shadow-2xl transition-shadow duration-300">
+          <CardContent className="p-8">
+            <h3 className="text-2xl font-cormorant font-bold text-center mb-6">
+              Воззвание ко Друзьям и Верным Подданным Королевства!
+            </h3>
+            <div className="royal-text text-justify leading-relaxed space-y-4">
+              <p>
+                Сие послание разослано по всем землям и герцогствам, дабы известить о великом событии: 
+                Её Королевское Высочество, Принцесса Злата Обладательница Золотистых Волос, что ярче солнца, 
+                и улыбки, что добрее весеннего дня, достигает совершеннолетия - своих Восемнадцати Вёсен!
+              </p>
+              
+              <p>
+                Давным-давно пророчество гласило, что, когда последняя прядь её волос отольёт светом 
+                восемнадцатое лето, детство окончится, и начнётся новая, великая глава. Сей день настал!
+              </p>
+              
+              <p>
+                Но беда подкралась нежданно: наше сокровище, наша Принцесса, заточила саму себя в высокой 
+                башне из учебников, конспектов и грёз о будущем. Её чудесные золотистые волосы, по которым 
+                мы все так скучаем, видны лишь изредка.
+              </p>
+              
+              <p>
+                Мы созываем всех рыцарей без страха и упрёка, всех фей-крёстных, весёлых трубадуров и 
+                отважных подруг - то есть, вас, наши дорогие гости! - чтобы общим весельем разрушить стены 
+                рутины и вызволить именинницу на свет Божий, к музыке, танцам и сладкому торту!
+              </p>
+            </div>
+            
+            <div className="text-center mt-6">
+              <div className="text-4xl mb-2">👑</div>
+              <p className="font-cormorant font-semibold text-lg">
+                С королевскими почестями и наилучшими пожеланиями
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* 4. Дата в сердечке */}
+        <Card className="max-w-md mx-auto mb-8 border-2 border-black relative heart-decoration animate-fade-in shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
           <CardContent className="p-6 text-center">
             <div className="relative z-10">
               <Icon name="Calendar" className="mx-auto mb-2" size={32} />
@@ -94,8 +150,8 @@ const Index = () => {
           </CardContent>
         </Card>
 
-        {/* Таймер обратного отсчета */}
-        <Card className="max-w-2xl mx-auto mb-8 border-2 border-black">
+        {/* 5. Таймер обратного отсчета */}
+        <Card className="max-w-2xl mx-auto mb-8 border-2 border-black animate-fade-in shadow-lg hover:shadow-xl transition-shadow duration-300">
           <CardContent className="p-6">
             <h3 className="text-xl font-cormorant font-semibold text-center mb-4">
               До начала торжества осталось:
@@ -121,8 +177,8 @@ const Index = () => {
           </CardContent>
         </Card>
 
-        {/* Информация о месте */}
-        <Card className="max-w-2xl mx-auto mb-8 border-2 border-black">
+        {/* 6. Место проведения */}
+        <Card className="max-w-2xl mx-auto mb-8 border-2 border-black animate-fade-in shadow-lg hover:shadow-xl transition-shadow duration-300">
           <CardContent className="p-6">
             <h3 className="text-xl font-cormorant font-semibold mb-4 text-center">
               Место торжества
@@ -151,8 +207,8 @@ const Index = () => {
           </CardContent>
         </Card>
 
-        {/* Дресс-код */}
-        <Card className="max-w-md mx-auto mb-8 border-2 border-black">
+        {/* 7. Дресс-код */}
+        <Card className="max-w-md mx-auto mb-8 border-2 border-black animate-fade-in shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
           <CardContent className="p-6 text-center">
             <Icon name="Shirt" className="mx-auto mb-2" size={32} />
             <h3 className="text-xl font-cormorant font-semibold mb-2">Дресс-код</h3>
@@ -162,8 +218,8 @@ const Index = () => {
           </CardContent>
         </Card>
 
-        {/* Анкета гостя */}
-        <Card className="max-w-md mx-auto mb-8 border-2 border-black">
+        {/* 8. Анкета гостя */}
+        <Card className="max-w-md mx-auto mb-8 border-2 border-black animate-fade-in shadow-lg hover:shadow-xl transition-shadow duration-300">
           <CardContent className="p-6">
             <h3 className="text-xl font-cormorant font-semibold mb-4 text-center">
               Анкета гостя
@@ -220,58 +276,6 @@ const Index = () => {
             )}
           </CardContent>
         </Card>
-
-        {/* Королевское воззвание */}
-        <Card className="max-w-4xl mx-auto border-2 border-black">
-          <CardContent className="p-8">
-            <h3 className="text-2xl font-cormorant font-bold text-center mb-6">
-              Воззвание ко Друзьям и Верным Подданным Королевства!
-            </h3>
-            <div className="royal-text text-justify leading-relaxed space-y-4">
-              <p>
-                Сие послание разослано по всем землям и герцогствам, дабы известить о великом событии: 
-                Её Королевское Высочество, Принцесса Злата Обладательница Золотистых Волос, что ярче солнца, 
-                и улыбки, что добрее весеннего дня, достигает совершеннолетия - своих Восемнадцати Вёсен!
-              </p>
-              
-              <p>
-                Давным-давно пророчество гласило, что, когда последняя прядь её волос отольёт светом 
-                восемнадцатое лето, детство окончится, и начнётся новая, великая глава. Сей день настал!
-              </p>
-              
-              <p>
-                Но беда подкралась нежданно: наше сокровище, наша Принцесса, заточила саму себя в высокой 
-                башне из учебников, конспектов и грёз о будущем. Её чудесные золотистые волосы, по которым 
-                мы все так скучаем, видны лишь изредка.
-              </p>
-              
-              <p>
-                Мы созываем всех рыцарей без страха и упрёка, всех фей-крёстных, весёлых трубадуров и 
-                отважных подруг - то есть, вас, наши дорогие гости! - чтобы общим весельем разрушить стены 
-                рутины и вызволить именинницу на свет Божий, к музыке, танцам и сладкому торту!
-              </p>
-            </div>
-            
-            <div className="text-center mt-6">
-              <div className="text-4xl mb-2">👑</div>
-              <p className="font-cormorant font-semibold text-lg">
-                С королевскими почестями и наилучшими пожеланиями
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Фото принцессы */}
-        <div className="mt-8 text-center">
-          <img 
-            src="https://cdn.poehali.dev/files/7f9f40aa-06c6-49e3-8503-c89fc0c38d8c.jpg"
-            alt="Принцесса Злата"
-            className="max-w-sm mx-auto rounded-lg shadow-lg border-4 border-accent"
-          />
-          <p className="mt-2 text-sm text-muted-foreground italic">
-            Её Высочество Принцесса Злата
-          </p>
-        </div>
       </div>
     </div>
   );
