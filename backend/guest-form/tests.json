@@ -1,0 +1,50 @@
+{
+  "tests": [
+    {
+      "name": "Успешная отправка анкеты с положительным ответом",
+      "method": "POST",
+      "body": {
+        "name": "Иван Петров", 
+        "attendance": "yes"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Успешная отправка анкеты с отрицательным ответом",
+      "method": "POST", 
+      "body": {
+        "name": "Мария Сидорова",
+        "attendance": "no"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Обработка CORS preflight запроса",
+      "method": "OPTIONS",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Отклонение пустых данных",
+      "method": "POST",
+      "body": {
+        "name": "",
+        "attendance": ""
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
