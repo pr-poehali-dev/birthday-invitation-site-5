@@ -55,31 +55,24 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
-      {/* Декоративные бантики */}
-      <div className="absolute top-10 left-10 text-4xl animate-pulse">🎀</div>
-      <div className="absolute top-20 right-20 text-3xl animate-pulse delay-300">🎀</div>
-      <div className="absolute top-40 left-1/4 text-2xl animate-pulse delay-500">🎀</div>
-      <div className="absolute top-60 right-1/3 text-3xl animate-pulse delay-700">🎀</div>
-      <div className="absolute bottom-20 left-20 text-4xl animate-pulse delay-1000">🎀</div>
-      <div className="absolute bottom-40 right-16 text-2xl animate-pulse delay-1200">🎀</div>
+      {/* Декоративные черные бантики */}
+      <div className="absolute top-10 left-10 text-4xl animate-pulse opacity-60" style={{filter: 'hue-rotate(280deg) saturate(0) brightness(0)'}}>🎀</div>
+      <div className="absolute top-20 right-20 text-3xl animate-pulse delay-300 opacity-60" style={{filter: 'hue-rotate(280deg) saturate(0) brightness(0)'}}>🎀</div>
+      <div className="absolute top-40 left-1/4 text-2xl animate-pulse delay-500 opacity-60" style={{filter: 'hue-rotate(280deg) saturate(0) brightness(0)'}}>🎀</div>
+      <div className="absolute top-60 right-1/3 text-3xl animate-pulse delay-700 opacity-60" style={{filter: 'hue-rotate(280deg) saturate(0) brightness(0)'}}>🎀</div>
+      <div className="absolute bottom-20 left-20 text-4xl animate-pulse delay-1000 opacity-60" style={{filter: 'hue-rotate(280deg) saturate(0) brightness(0)'}}>🎀</div>
+      <div className="absolute bottom-40 right-16 text-2xl animate-pulse delay-1200 opacity-60" style={{filter: 'hue-rotate(280deg) saturate(0) brightness(0)'}}>🎀</div>
 
       <div className="container mx-auto px-4 py-8 relative z-10">
         {/* 1. Заголовок */}
         <div className="text-center mb-12">
-          <div className="flex justify-center items-center mb-4">
-            <span className="text-6xl">👑</span>
-          </div>
           <h1 className="princess-title mb-4">
             Принцесса Злата
           </h1>
           <h2 className="text-2xl font-cormorant font-semibold mb-2">
             18-летие
           </h2>
-          <div className="flex justify-center items-center gap-2">
-            <span className="text-lg">✨</span>
-            <p className="text-lg royal-text">Королевское торжество</p>
-            <span className="text-lg">✨</span>
-          </div>
+          <p className="text-lg royal-text">Королевское торжество</p>
         </div>
 
         {/* 2. Фото принцессы Златы */}
@@ -90,8 +83,7 @@ const Index = () => {
               alt="Принцесса Злата"
               className="max-w-sm mx-auto rounded-xl shadow-2xl border-4 border-accent hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute -top-4 -right-4 text-4xl animate-bounce">👑</div>
-            <div className="absolute -bottom-2 -left-2 text-3xl animate-pulse">✨</div>
+
           </div>
           <p className="mt-6 text-lg font-cormorant italic text-muted-foreground">
             Её Высочество Принцесса Злата
@@ -130,7 +122,6 @@ const Index = () => {
             </div>
             
             <div className="text-center mt-6">
-              <div className="text-4xl mb-2">👑</div>
               <p className="font-cormorant font-semibold text-lg">
                 С королевскими почестями и наилучшими пожеланиями
               </p>
@@ -138,15 +129,78 @@ const Index = () => {
           </CardContent>
         </Card>
 
-        {/* 4. Дата в сердечке */}
-        <Card className="max-w-md mx-auto mb-8 border-2 border-black relative heart-decoration animate-fade-in shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+        {/* 4. Дата в календаре */}
+        <Card className="max-w-md mx-auto mb-8 border-2 border-black animate-fade-in shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
           <CardContent className="p-6 text-center">
-            <div className="relative z-10">
-              <Icon name="Calendar" className="mx-auto mb-2" size={32} />
-              <h3 className="text-xl font-cormorant font-semibold mb-2">Дата торжества</h3>
-              <p className="text-3xl font-bold">10.10.2025</p>
-              <p className="text-lg mt-2">Сбор гостей в 17:00</p>
+            <h3 className="text-xl font-cormorant font-semibold mb-6">Дата торжества</h3>
+            <div className="bg-white rounded-lg shadow-inner p-4 max-w-xs mx-auto border">
+              {/* Заголовок календаря */}
+              <div className="bg-red-600 text-white rounded-t-lg -mx-4 -mt-4 mb-2 py-2">
+                <p className="text-sm font-semibold">Октябрь 2025</p>
+              </div>
+              
+              {/* Дни недели */}
+              <div className="grid grid-cols-7 gap-1 text-xs text-gray-500 mb-2">
+                <div>Пн</div>
+                <div>Вт</div>
+                <div>Ср</div>
+                <div>Чт</div>
+                <div>Пт</div>
+                <div>Сб</div>
+                <div>Вс</div>
+              </div>
+              
+              {/* Календарные дни */}
+              <div className="grid grid-cols-7 gap-1 text-sm">
+                <div className="text-gray-400">29</div>
+                <div className="text-gray-400">30</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                {/* Выделенная дата с сердечком */}
+                <div className="relative">
+                  <div className="w-8 h-8 flex items-center justify-center text-white font-bold relative z-10">
+                    10
+                  </div>
+                  {/* Розовое сердечко */}
+                  <div className="absolute inset-0 flex items-center justify-center text-pink-400">
+                    <svg width="32" height="28" viewBox="0 0 32 28" fill="currentColor">
+                      <path d="M16 28c-.5 0-1-.2-1.3-.6C14.2 26.8 1 15.4 1 8.5 1 4.4 4.4 1 8.5 1c2.5 0 4.8 1.2 6.2 3.2C16.2 2.2 18.5 1 21 1c4.1 0 7.5 3.4 7.5 7.5 0 6.9-13.2 18.3-13.7 18.9-.3.4-.8.6-1.3.6z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div>11</div>
+                <div>12</div>
+                <div>13</div>
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+                <div className="text-gray-400">1</div>
+                <div className="text-gray-400">2</div>
+              </div>
             </div>
+            <p className="text-lg mt-4 font-semibold">Сбор гостей в 17:00</p>
           </CardContent>
         </Card>
 
@@ -157,19 +211,19 @@ const Index = () => {
               До начала торжества осталось:
             </h3>
             <div className="grid grid-cols-4 gap-4 text-center">
-              <div className="bg-accent text-accent-foreground p-4 rounded-lg">
+              <div className="bg-pink-200 text-black p-4 rounded-lg border border-pink-300">
                 <div className="text-2xl font-bold">{timeLeft.days}</div>
                 <div className="text-sm">дней</div>
               </div>
-              <div className="bg-accent text-accent-foreground p-4 rounded-lg">
+              <div className="bg-pink-200 text-black p-4 rounded-lg border border-pink-300">
                 <div className="text-2xl font-bold">{timeLeft.hours}</div>
                 <div className="text-sm">часов</div>
               </div>
-              <div className="bg-accent text-accent-foreground p-4 rounded-lg">
+              <div className="bg-pink-200 text-black p-4 rounded-lg border border-pink-300">
                 <div className="text-2xl font-bold">{timeLeft.minutes}</div>
                 <div className="text-sm">минут</div>
               </div>
-              <div className="bg-accent text-accent-foreground p-4 rounded-lg">
+              <div className="bg-pink-200 text-black p-4 rounded-lg border border-pink-300">
                 <div className="text-2xl font-bold">{timeLeft.seconds}</div>
                 <div className="text-sm">секунд</div>
               </div>
